@@ -45,3 +45,4 @@ root                        (project root folder)
 ## Authors
 ---
 * cconover2b - Craig Cononver - (cconover2#byui.edu)
+ksantos16 - Kira Santos - (matt.kira15@gmail.com)
