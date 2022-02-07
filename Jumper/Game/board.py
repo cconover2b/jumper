@@ -1,20 +1,44 @@
-word = list("apple")
-hidden = []
-for letter in word:
-    hidden.append("_")
+class Board:
 
-attempts = 3
-max_attempt = 5
+    def __init__(self):
 
-isgameover = False
-while not isgameover:
+        self._attempts = ""
+        self._word = []
+        self.board()
+        self.attempt_1_board()
+        self.attempt_2_board()
+        self.attempt_3_board()
+        self.attempt_4_board()
 
-    hiddenstring = " ".join(hidden)
+    def get_attempt(self):
 
-    if attempts > 0:
+        if self._attempts > 0:
+            board = self.attempt_1_board(self._word)
+        elif self._attempts > 1:
+            board = self.attempt_2_board(self._word)
+        elif self._attempts > 2:
+            board = self.attempt_3_board(self._word)
+        elif self._attempts > 3:
+            board = self.attempt_4_board(self._word)
 
-        print(f"The current word is{hiddenstring}")
+    def board():
 
+        print()
+        print("    - - - - -  ")
+        print("      ___      ")
+        print("     /___\     ")
+        print("     \   /     ")
+        print("      \ /      ")
+        print("       0       ")
+        print("      /|\      ")
+        print("      / \      ")
+        print()
+        print("    ^^^^^^^^^  ")
+
+    def attempt_1_board(word):
+
+        print(f"{word}")
+        print()
         print("    - - - - -  ")
         print("               ")
         print("     /___\     ")
@@ -23,16 +47,13 @@ while not isgameover:
         print("       0       ")
         print("      /|\      ")
         print("      / \      ")
-
+        print()
         print("    ^^^^^^^^^  ")
 
-        print(f"you have {attempts} attemps")
-        hiddenstring = " ".join(hidden)
+    def attempt_2_board(word):
 
-    elif attempts > 1:
-
-        print(f"The current word is{hiddenstring}")
-
+        print(f"{word}")
+        print()
         print("    - - - - -  ")
         print("               ")
         print("               ")
@@ -41,16 +62,13 @@ while not isgameover:
         print("       0       ")
         print("      /|\      ")
         print("      / \      ")
-
+        print()
         print("    ^^^^^^^^^  ")
 
-        print(f"you have {attempts} attemps")
-        hiddenstring = " ".join(hidden)
+    def attempt_3_board(word):
 
-    elif attempts > 2:
-
-        print(f"The current word is{hiddenstring}")
-
+        print(f"{word}")
+        print()
         print("    - - - - -  ")
         print("               ")
         print("               ")
@@ -59,16 +77,13 @@ while not isgameover:
         print("       0       ")
         print("      /|\      ")
         print("      / \      ")
-
+        print()
         print("    ^^^^^^^^^  ")
 
-        print(f"you have {attempts} attemps")
-        hiddenstring = " ".join(hidden)
+    def attempt_4_board(word):
 
-    elif attempts > 2:
-
-        print(f"The current word is{hiddenstring}")
-
+        print(f"{word}")
+        print()
         print("    - - - - -  ")
         print("               ")
         print("               ")
@@ -77,13 +92,7 @@ while not isgameover:
         print("       X       ")
         print("      /|\      ")
         print("      / \      ")
-
+        print()
         print("    ^^^^^^^^^  ")
-
-        print(f"you have {attempts} attemps")
-        hiddenstring = " ".join(hidden)
-
-    else:
-        ""
-
-    break
+        print()
+        print(f'Game Over (;.;)')
