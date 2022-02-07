@@ -47,3 +47,4 @@ root                        (project root folder)
 * cconover2b - Craig Cononver - (cconover2#byui.edu)
 ksantos16 - Kira Santos - (matt.kira15@gmail.com)
 GhostLeader119 - Caden Campbell - (cadecamp9@gmail.com)
+shots28 - Sam Hootini
