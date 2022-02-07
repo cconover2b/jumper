@@ -9,9 +9,9 @@ class Director:
     The responsibility of a Director is to control the sequence of play.
 
     Attributes:
-        hider (Hider): The game's hider.
+        word (Word): The game's hidden word.
         is_playing (boolean): Whether or not to keep playing.
-        seeker (Seeker): The game's seeker.
+        guesser (Guesser): The game's guesser.
         terminal_service: For getting and displaying information on the terminal.
     """
 
@@ -38,7 +38,7 @@ class Director:
             self._do_outputs()
 
     def _get_inputs(self):
-        """Moves the seeker to a new location.
+        """Gets the word guessed.
 
         Args:
             self (Director): An instance of Director.
