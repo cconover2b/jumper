@@ -43,11 +43,11 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        # new_location = self._terminal_service.read_number("\nEnter a location [1-1000]: ")
-        # self._seeker.move_location(new_location)
+        new_guess = self._terminal_service.read_word("\nEnter a word: ")
+        self._guesser.add_guess(new_guess)
         
     def _do_updates(self):
-        """Keeps watch on where the seeker is moving.
+        """Keeps watch on where the guesses given to the guesser.
 
         Args:
             self (Director): An instance of Director.
@@ -55,7 +55,7 @@ class Director:
         self._word.watch_guesser(self._guesser)
         
     def _do_outputs(self):
-        """Provides a hint for the seeker to use.
+        """Provides hints for the guesser to use.
 
         Args:
             self (Director): An instance of Director.
