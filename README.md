@@ -32,8 +32,8 @@ root                        (project root folder)
   +-- game                  (specific classes)
     +-- director.py         (director class) Sam
     +-- guesser.py          (guesser class) Craig
-    +-- word.py            (hider class) Caden
-    +-- board.py (terminal_service class) Kira
+    +-- word_generator.py   (word_generator class) Caden
+    +-- board.py            (board class) Kira
   +-- __main__.py           (program entry point)
 +-- README.md               (general info)
 ```
