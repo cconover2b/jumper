@@ -30,10 +30,10 @@ The project files and folders are organized as follows:
 root                        (project root folder)
 +-- jumper                  (source code for game)
   +-- game                  (specific classes)
-    +-- director.py         (director class)
-    +-- guesser.py          (guesser class)
-    +-- word.py            (hider class)
-    +-- terminal_service.py (terminal_service class)
+    +-- director.py         (director class) Sam
+    +-- guesser.py          (guesser class) Craig
+    +-- word.py            (hider class) Caden
+    +-- board.py (terminal_service class) Kira
   +-- __main__.py           (program entry point)
 +-- README.md               (general info)
 ```
@@ -45,5 +45,3 @@ root                        (project root folder)
 ## Authors
 ---
 * cconover2b - Craig Cononver - (cconover2#byui.edu)
-ksantos16 - Kira Santos - (matt.kira15@gmail.com)
-GhostLeader119 - Caden Campbell - (cadecamp9@gmail.com)
