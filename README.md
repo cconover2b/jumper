@@ -45,4 +45,6 @@ root                        (project root folder)
 ## Authors
 ---
 * cconover2b - Craig Cononver - (cconover2#byui.edu)
-- test
+* ksantos16 - Kira Santos - (matt.kira15@gmail.com)
+* GhostLeader119 - Caden Campbell - (cadecamp9@gmail.com)
+* shots28 - Sam Hootini
