@@ -18,13 +18,6 @@ class Guesser:
         """
         self._letter = []
         
-    # def get_letter(self):
-    #     """Gets the current letter.
-        
-    #     Returns:
-    #         letter: The current letter,
-    #     """
-    #     return self._letter
 
     def add_letter(self, letter):
         self._letters.append(letter)
