@@ -22,9 +22,20 @@ class word_generator:
             6: 'Audience',
             7: 'Modifying',
             8: 'Drawing',
-            9: 'Development'
+            9: 'Development',
+            10: 'Shadow',
+            11: 'Duration',
+            12: 'Messenger',
+            13: 'Remember',
+            14: 'Entertainer',
+            15: 'Mannerisms',
+            16: 'Alignment',
+            17: 'Illusion',
+            18: 'Container',
+            19: 'Combination',
+            20: 'Material'
         }
-        option = random.randint(1, 9)
+        option = random.randint(1, 20)
         self._word = words[option].lower()
 
     def compare_letters(self, _guesser):
