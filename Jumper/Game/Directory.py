@@ -1,6 +1,6 @@
-from game.terminal_service import TerminalService
-from game.word import Word
-from game.guesser import Guesser
+from board import Board
+from word_generator import word_generator
+from guesser import Guesser
 
 
 class Director:
@@ -21,10 +21,10 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        self._word = Word()
+        self._word_generator = word_generator()
         self._is_playing = True
         self._guesser = Guesser()
-        self._terminal_service = TerminalService()
+        self._board = Board()
         
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -43,8 +43,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        new_guess = self._terminal_service.read_word("\nEnter a word: ")
-        self._guesser.add_guess(new_guess)
+        new_guess = self._board.read_letter("\nEnter a letter: ")
+        self._guesser.add_letter(new_guess)
         
     def _do_updates(self):
         """Keeps watch on where the guesses given to the guesser.
@@ -52,7 +52,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self._word.watch_guesser(self._guesser)
+        self._word_generator.watch_guesser(self._guesser)
         
     def _do_outputs(self):
         """Provides hints for the guesser to use.
@@ -60,7 +60,9 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        hint = self._word.get_hint()
-        self._terminal_service.write_text(hint)
-        if self._word.is_found():
+        hint = "_A_"
+        hint = self._word_generator.get_hint()
+        self._board.write_text(hint)
+        # Get attempt
+        if self._word_generator.is_found():
             self._is_playing = False
