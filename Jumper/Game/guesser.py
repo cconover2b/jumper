@@ -1,3 +1,5 @@
+from Game import board
+
 class Guesser:
     """The person looking for the word. 
     
@@ -14,7 +16,11 @@ class Guesser:
         Args:
             self (Guesser): An instance of Guesser.
         """
-        self._letter = str(input("Select a letter a-z:"))
+        self.letter = board.guess()
+
+
+        # this is being put in the board
+        # self._letter = str(input("Select a letter a-z:"))
         
     def get_letter(self):
         """Gets the current letter.
@@ -23,3 +29,8 @@ class Guesser:
             letter: The current letter,
         """
         return self._letter
+
+    def all_letters(self, letter):
+        self._letters = []
+        self._letters.append(letter)
+        return self._letters
