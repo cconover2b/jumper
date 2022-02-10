@@ -16,7 +16,7 @@ class Guesser:
         Args:
             self (Guesser): An instance of Guesser.
         """
-        self.letter = board.guess()
+        self.letter = []
 
 
         # this is being put in the board
@@ -30,7 +30,5 @@ class Guesser:
         """
         return self._letter
 
-    def all_letters(self, letter):
-        self._letters = []
+    def add_letter(self, letter):
         self._letters.append(letter)
-        return self._letters
