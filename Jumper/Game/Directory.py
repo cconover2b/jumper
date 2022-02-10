@@ -43,7 +43,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        new_guess = self._board.read_letter("\nEnter a letter: ")
+        new_guess = self._board.get_letter("\nEnter a letter: ")
         self._guesser.add_letter(new_guess)
         
     def _do_updates(self):
@@ -52,7 +52,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self._word_generator.watch_guesser(self._guesser)
+        self._board._hint = self._word_generator.compare_letters(self._guesser)
+        self._board._attempts = self._word_generator.count_attempts(self._guesser)
         
     def _do_outputs(self):
         """Provides hints for the guesser to use.
@@ -60,9 +61,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        hint = "_A_"
-        hint = self._word_generator.get_hint()
-        self._board.write_text(hint)
-        # Get attempt
-        if self._word_generator.is_found():
-            self._is_playing = False
+        
+        self._board.display_letter(self._board._hint)
+        self._board.get_attempt()
+
+        self._is_playing = self._word_generator.is_found(self._guesser.letter)

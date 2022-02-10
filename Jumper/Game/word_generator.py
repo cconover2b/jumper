@@ -12,13 +12,7 @@ class word_generator:
 
     def __init__(self):
         #Initilize and set up default values
-        self.word = 'None'
-        self.word_len = 0
-        self.option = random.randint(1, 9)
-        self.word_list()
-
-    def word_list(self):
-        #dictionary holding possible word choices
+        # self.word_len = 0
         words = {
             1: 'Handbook',
             2: 'Dictionary',
@@ -30,19 +24,47 @@ class word_generator:
             8: 'Drawing',
             9: 'Development'
         }
-        self.word = words[self.option]
+        option = random.randint(1, 9)
+        self._word = words[option]
+        self._hint = ""
+
+    def compare_letters(self, _guesser, _board):
+
+        hint = ""
+
+        for letter in self._word:
+            if letter in _guesser.letter:
+                hint += letter
+            else:
+                hint += "_"
+                _board._attempts += 1
+
+        return hint
+
+    def is_found(self, guessed_letters):
+
+        for letter in self._word:
+            if letter in guessed_letters:
+                pass
+            else:
+                return True
+
+        return False
+
+    def count_attempts(self):
+        pass
 
 
-    def word_count(self):
-        '''
-        Utility function: 
-        Returns the length of self.word as an INT to the call point
-        '''
+    # def word_count(self):
+    #     '''
+    #     Utility function: 
+    #     Returns the length of self.word as an INT to the call point
+    #     '''
 
-        self.word_len = int(len(self.word))
-        return self.word_len
+    #     self.word_len = int(len(self.word))
+    #     return self.word_len
 
-    def return_word(self):
-        #Returns self.word to the call point
-        return self.word
+    # def return_word(self):
+    #     #Returns self.word to the call point
+    #     return self.word
 
