@@ -1,6 +1,14 @@
 class Board:
 
-    def read_text(self, prompt):
+    def __init__(self):
+        """Constructs a new Board.
+
+        Args:
+            self (Guesser): An instance of Guesser.
+        """
+        self._attempt = 0
+
+    def get_letter(self, prompt):
         """Gets text input from the terminal. Directs the user with the given prompt.
 
         Args: 
@@ -12,7 +20,7 @@ class Board:
         """
         return input(prompt)
 
-    def read_letter(self, text):
+    def display_letter(self, text):
         """Displays the given text on the terminal. 
 
         Args: 
