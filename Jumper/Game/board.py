@@ -1,25 +1,36 @@
 class Board:
 
-    def __init__(self):
+    def read_text(self, prompt):
+        """Gets text input from the terminal. Directs the user with the given prompt.
 
-        self._attempts = ""
-        self._word = []
-        self.board()
-        self.attempt_1_board()
-        self.attempt_2_board()
-        self.attempt_3_board()
-        self.attempt_4_board()
+        Args: 
+            self (Board): An instance of Board.
+            prompt (string): The prompt to display on the terminal.
+
+        Returns:
+            string: The user's input as text.
+        """
+        return input(prompt)
+
+    def read_letter(self, text):
+        """Displays the given text on the terminal. 
+
+        Args: 
+        self (TerminalService): An instance of TerminalService.
+        text (string): The text to display.
+        """
+        print(text)
 
     def get_attempt(self):
 
         if self._attempts > 0:
-            board = self.attempt_1_board(self._word)
+            board = self.attempt_1_board()
         elif self._attempts > 1:
-            board = self.attempt_2_board(self._word)
+            board = self.attempt_2_board()
         elif self._attempts > 2:
-            board = self.attempt_3_board(self._word)
+            board = self.attempt_3_board()
         elif self._attempts > 3:
-            board = self.attempt_4_board(self._word)
+            board = self.attempt_4_board()
 
     def board():
 
