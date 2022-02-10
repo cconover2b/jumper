@@ -16,8 +16,8 @@ class Guesser:
         Args:
             self (Guesser): An instance of Guesser.
         """
-        self._letter = []
+        self._letters = []
         
 
     def add_letter(self, letter):
-        self._letters.append(letter)
+        self._letters.append(letter.lower())

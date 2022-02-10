@@ -1,6 +1,6 @@
-from board import Board
-from word_generator import word_generator
-from guesser import Guesser
+from Game.board import Board
+from Game.word_generator import word_generator
+from Game.guesser import Guesser
 
 
 class Director:
@@ -36,6 +36,7 @@ class Director:
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
+        print("GG")
 
     def _get_inputs(self):
         """Gets the word guessed.
@@ -53,7 +54,7 @@ class Director:
             self (Director): An instance of Director.
         """
         self._board._hint = self._word_generator.compare_letters(self._guesser)
-        self._board._attempts = self._word_generator.count_attempts(self._guesser)
+        self._board._attempt = self._word_generator.count_attempts(self._guesser)
         
     def _do_outputs(self):
         """Provides hints for the guesser to use.
@@ -62,7 +63,7 @@ class Director:
             self (Director): An instance of Director.
         """
         
-        self._board.display_letter(self._board._hint)
+        self._board.display_letter()
         self._board.get_attempt()
 
-        self._is_playing = self._word_generator.is_found(self._guesser.letter)
+        self._is_playing = self._word_generator.is_found(self._guesser._letters)

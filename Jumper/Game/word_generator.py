@@ -25,19 +25,17 @@ class word_generator:
             9: 'Development'
         }
         option = random.randint(1, 9)
-        self._word = words[option]
-        self._hint = ""
+        self._word = words[option].lower()
 
-    def compare_letters(self, _guesser, _board):
+    def compare_letters(self, _guesser):
 
         hint = ""
 
         for letter in self._word:
-            if letter in _guesser.letter:
+            if letter in _guesser._letters:
                 hint += letter
             else:
                 hint += "_"
-                _board._attempts += 1
 
         return hint
 
@@ -51,8 +49,17 @@ class word_generator:
 
         return False
 
-    def count_attempts(self):
-        pass
+    def count_attempts(self, _guesser):
+
+        attempt = 0
+
+        for guessed_letter in _guesser._letters:
+            if guessed_letter in self._word:
+                pass
+            else:
+                attempt += 1
+
+        return attempt
 
 
     # def word_count(self):
