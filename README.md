@@ -30,7 +30,7 @@ The project files and folders are organized as follows:
 root                        (project root folder)
 +-- jumper                  (source code for game)
   +-- game                  (specific classes)
-    +-- director.py         (director class) Sam
+    +-- directory.py         (director class) Sam
     +-- guesser.py          (guesser class) Craig
     +-- word_generator.py   (word_generator class) Caden
     +-- board.py            (board class) Kira
