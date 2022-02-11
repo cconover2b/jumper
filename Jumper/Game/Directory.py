@@ -34,9 +34,9 @@ class Director:
         """
         while self._is_playing:
             self._get_inputs()
-            _status = self._do_updates()
+            self._do_updates()
             self._do_outputs()
-            if _status == 4:
+            if self._status == 4:
                 #Will stop program if out of guesses
                 self._is_playing = False
                 return
@@ -60,8 +60,7 @@ class Director:
         self._board._hint = self._word_generator.compare_letters(self._guesser)
         self._board._attempt = self._word_generator.count_attempts(self._guesser)
 
-        status = self._board._attempt
-        return status
+        self._status = self._board._attempt
 
         
     def _do_outputs(self):
