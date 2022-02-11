@@ -1,6 +1,15 @@
 class Board:
 
-    def read_text(self, prompt):
+    def __init__(self):
+        """Constructs a new Board.
+
+        Args:
+            self (Guesser): An instance of Guesser.
+        """
+        self._attempt = 0
+        self._hint = ""
+
+    def get_letter(self, prompt):
         """Gets text input from the terminal. Directs the user with the given prompt.
 
         Args: 
@@ -12,27 +21,33 @@ class Board:
         """
         return input(prompt)
 
-    def read_letter(self, text):
+    def display_letter(self):
         """Displays the given text on the terminal. 
 
         Args: 
         self (TerminalService): An instance of TerminalService.
         text (string): The text to display.
         """
-        print(text)
+        print(self._hint)
 
     def get_attempt(self):
 
-        if self._attempts > 0:
-            board = self.attempt_1_board()
-        elif self._attempts > 1:
-            board = self.attempt_2_board()
-        elif self._attempts > 2:
-            board = self.attempt_3_board()
-        elif self._attempts > 3:
-            board = self.attempt_4_board()
+        if self._attempt == 0:
+            self.board()
 
-    def board():
+        elif self._attempt == 1:
+            self.attempt_1_board()
+
+        elif self._attempt == 2:
+            self.attempt_2_board()
+
+        elif self._attempt == 3:
+            self.attempt_3_board()
+
+        elif self._attempt == 4:
+            self.attempt_4_board()
+
+    def board(self):
 
         print()
         print("    - - - - -  ")
@@ -46,9 +61,8 @@ class Board:
         print()
         print("    ^^^^^^^^^  ")
 
-    def attempt_1_board(word):
+    def attempt_1_board(self):
 
-        print(f"{word}")
         print()
         print("    - - - - -  ")
         print("               ")
@@ -61,9 +75,8 @@ class Board:
         print()
         print("    ^^^^^^^^^  ")
 
-    def attempt_2_board(word):
+    def attempt_2_board(self):
 
-        print(f"{word}")
         print()
         print("    - - - - -  ")
         print("               ")
@@ -76,9 +89,8 @@ class Board:
         print()
         print("    ^^^^^^^^^  ")
 
-    def attempt_3_board(word):
+    def attempt_3_board(self):
 
-        print(f"{word}")
         print()
         print("    - - - - -  ")
         print("               ")
@@ -91,9 +103,8 @@ class Board:
         print()
         print("    ^^^^^^^^^  ")
 
-    def attempt_4_board(word):
+    def attempt_4_board(self):
 
-        print(f"{word}")
         print()
         print("    - - - - -  ")
         print("               ")
@@ -106,4 +117,4 @@ class Board:
         print()
         print("    ^^^^^^^^^  ")
         print()
-        print(f'Game Over (;.;)')
+        print('Game Over (;.;)')

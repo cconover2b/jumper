@@ -16,21 +16,8 @@ class Guesser:
         Args:
             self (Guesser): An instance of Guesser.
         """
-        self.letter = board.guess()
-
-
-        # this is being put in the board
-        # self._letter = str(input("Select a letter a-z:"))
-        
-    def get_letter(self):
-        """Gets the current letter.
-        
-        Returns:
-            letter: The current letter,
-        """
-        return self._letter
-
-    def all_letters(self, letter):
         self._letters = []
-        self._letters.append(letter)
-        return self._letters
+        
+
+    def add_letter(self, letter):
+        self._letters.append(letter.lower())
